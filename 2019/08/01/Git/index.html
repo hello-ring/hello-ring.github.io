@@ -194,7 +194,13 @@
         </header>
 
         <div class="post-content">
-            <h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git rm -r --cached .  (文件名，如果忽略全部 直接用 <span class="string">"."</span>)</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">'update .gitignore'</span></span><br></pre></td></tr></table></figure>
+            <h2 id="添加或修改用户信息"><a href="#添加或修改用户信息" class="headerlink" title="添加或修改用户信息"></a>添加或修改用户信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"ring"</span></span><br><span class="line">$ git config --global user.email <span class="string">"hello@google.com"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加仓库地址"><a href="#添加仓库地址" class="headerlink" title="添加仓库地址"></a>添加仓库地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin [url]</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改仓库地址"><a href="#修改仓库地址" class="headerlink" title="修改仓库地址"></a>修改仓库地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote origin <span class="built_in">set</span>-url [url]</span><br></pre></td></tr></table></figure>
+
+<h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git rm -r --cached .  (文件名，如果忽略全部 直接用 <span class="string">"."</span>)</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">'update .gitignore'</span></span><br></pre></td></tr></table></figure>
 
 
         </div>
