@@ -7,7 +7,7 @@
 
 
 
-<title>Hello World | RING</title>
+<title>Kotlin 习惯用法 | RING</title>
 
 
 
@@ -169,37 +169,55 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">Kotlin 习惯用法</h1>
             
                 <div class="post-meta">
                     
-                        Author: <a itemprop="author" rel="author" href="/">RONG</a>
+                        Author: <a itemprop="author" rel="author" href="/">RING</a>
                     
 
                     
                         <span class="post-time">
-                        Date: <a href="#">July 18, 2019&nbsp;&nbsp;17:49:45</a>
+                        Date: <a href="#">September 8, 2019&nbsp;&nbsp;21:45:45</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Kotlin/">Kotlin</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <h1 id="习惯用法"><a href="#习惯用法" class="headerlink" title="习惯用法"></a>习惯用法</h1><p>一些Kotlin中广泛使用的语法习惯</p>
+<h2 id="data-class"><a href="#data-class" class="headerlink" title="data class"></a>data class</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data class Customer(val name: String, val email: String)</span><br><span class="line"></span><br><span class="line">fun main()&#123;</span><br><span class="line">	val customer = Customer(&quot;ring&quot;, &quot;if.f@qq.com&quot;)</span><br><span class="line">	println(customer.name)</span><br><span class="line">	println(customer.email)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>会为 Customer 类提供以下功能：</p>
+<ul>
+<li>所有属性的 getters (对于var定义的还有setters)</li>
+<li>equals()</li>
+<li>hashCode()</li>
+<li>toString()</li>
+<li>copy()</li>
+<li>所有属性的 component1(). component2()…等</li>
+</ul>
+<h1 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun foo(a: Int = 0, b: String = &quot;&quot;) &#123;...&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h1 id="过滤list"><a href="#过滤list" class="headerlink" title="过滤list"></a>过滤list</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val list = listOf(1, 2, 3, 4, 5)</span><br><span class="line">list.filter &#123;it &gt; 2&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h1 id="检查元素是否在集合中"><a href="#检查元素是否在集合中" class="headerlink" title="检查元素是否在集合中"></a>检查元素是否在集合中</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if (&quot;abc&quot; in list) &#123;...&#125;</span><br><span class="line">if (&quot;abc&quot; !in list) &#123;...&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h1 id="遍历-map-pair型list"><a href="#遍历-map-pair型list" class="headerlink" title="遍历 map/pair型list"></a>遍历 map/pair型list</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val map = mapOf(0 to &quot;秦&quot;, 1 to &quot;川&quot;, 2 to &quot;小&quot;, 3 to &quot;将&quot;)</span><br><span class="line">for ((k, v) in map) println(&quot;$k -&gt; $v&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用单例"><a href="#使用单例" class="headerlink" title="使用单例"></a>使用单例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">object Resource &#123;</span><br><span class="line">  val name = &quot;ring&quot;</span><br><span class="line">&#125;</span><br><span class="line">fun main()&#123;</span><br><span class="line">  print(Resource.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="if-not-null"><a href="#if-not-null" class="headerlink" title="if not null"></a>if not null</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val files = File(&quot;test&quot;).listFiles()</span><br><span class="line">println(files?.size) //如果不为空 打印size</span><br><span class="line">files? print(&quot;空&quot;)   //如果为空 打印“空”</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -217,6 +235,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/Kotlin/"># Kotlin</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -227,8 +249,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2019/08/01/Git/">Git</a>
             
+            <a class="next" rel="next" href="/2019/09/07/Kotlin/">Kotlin 基本语法</a>
             
         </section>
 
@@ -239,7 +261,7 @@
         </div>
         <footer id="footer" class="footer">
     <div class="copyright">
-        <span>© RONG | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+        <span>© RING | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
 
